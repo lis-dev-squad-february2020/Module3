@@ -7,11 +7,6 @@ class EditProject extends Component {
         description: this.props.location.state.description,
     }
 
-    componentDidMount() {
-        //Make call to the API
-        //Set the state with the response
-    }
-
     handleChange = (event) => {
         const {name, value} = event.target;
         this.setState({[name]: value});

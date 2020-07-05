@@ -17,6 +17,7 @@ class Signup extends Component {
                     password: ''
                 });
                 this.props.setCurrentUser(response)
+                localStorage.setItem("loggedin", true);
                 this.props.history.push("/projects")
             })
             .catch(error => console.log(error))

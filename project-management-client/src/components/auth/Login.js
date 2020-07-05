@@ -22,6 +22,7 @@ class Login extends Component {
                 //Set the whole application with the user that just logged in
                 this.props.setCurrentUser(response);
                 this.setState({ username: '', password: ''});
+                localStorage.setItem("loggedin", true);
                 this.props.history.push('/projects');
             })
 

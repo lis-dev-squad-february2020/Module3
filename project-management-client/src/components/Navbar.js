@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import AuthService from './projects/auth/auth-service';
+import AuthService from './auth/auth-service';
 
 class Navbar extends Component {
     service = new AuthService();
@@ -9,6 +9,7 @@ class Navbar extends Component {
         this.service.logout()
             .then(() => {
                 this.props.setCurrentUser(null);
+                localStorage.clear();
             })
     }
 
@@ -22,6 +23,9 @@ class Navbar extends Component {
                         </li>
                         <li>
                             <Link to='/projects'>Projects</Link>
+                        </li>
+                        <li>
+                            <Link to='/images/add'>Add Image</Link>
                         </li>
                         <li>
                             <Link to='/'>
@@ -40,6 +44,12 @@ class Navbar extends Component {
                         </li>
                         <li>
                            <Link to='/signup'>Signup</Link>
+                        </li>
+                        <li>
+                            <Link to='/projects'>Projects</Link>
+                        </li>
+                        <li>
+                            <Link to='/images/add'>Add Image</Link>
                         </li>
                     </ul>
                 </nav>

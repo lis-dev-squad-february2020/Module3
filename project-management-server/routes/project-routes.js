@@ -6,6 +6,7 @@ const Project = require('../models/project-model');
 
 //GET route => to get all the projects
 router.get('/projects', (req, res) => {
+  console.log('user', req.user);
   // Gets data from mongoDB
   Project.find()
     .then(allProjects => {
@@ -58,7 +59,6 @@ router.get('/projects/:id', (req, res) => {
 router.put('/projects/:id', (req, res) => {
   Project.findByIdAndUpdate(req.params.id, req.body)
       .then((response) => {
-        console.log('response', response);
         res.json({ message: `Project ${response} was updated succesfully`});
       })
       .catch(error => {

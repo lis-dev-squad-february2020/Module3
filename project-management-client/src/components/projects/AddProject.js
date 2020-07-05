@@ -12,7 +12,7 @@ class AddProject extends Component {
         event.preventDefault();
         const title = this.state.title;
         const description = this.state.description;
-        axios.post('http://localhost:5000/api/projects', {title, description})
+        axios.post('http://localhost:5000/api/projects', {title, description}, {withCredentials: true})
             .then(() => { 
                 //1. Lift the state up and push new project into the state that lives on projectlist
                 //2. Call the api to get all projects again

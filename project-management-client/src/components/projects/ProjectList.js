@@ -4,14 +4,13 @@ import { Link } from 'react-router-dom';
 import AddProject from './AddProject';
 
 class ProjectList extends Component {
-
     state = {
         listOfProjects: []
     }
 
     getAllProjects = () => {
         // Get list of project from the API we just built
-        axios.get('http://localhost:5000/api/projects')
+        axios.get('http://localhost:5000/api/projects', {withCredentials: true})
             .then(responseFromAPI => {
                 this.setState({
                     listOfProjects: responseFromAPI.data
@@ -24,7 +23,7 @@ class ProjectList extends Component {
     }
 
     render() {
-        return(
+        return (
             <div>
                 <div style={{width: '60%', float: 'left'}}>
                     {this.state.listOfProjects.map(project=> {

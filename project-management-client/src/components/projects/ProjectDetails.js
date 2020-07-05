@@ -20,7 +20,6 @@ class ProjectDetails extends Component {
         axios.get(`http://localhost:5000/api/projects/${params.id}`)
             .then(responseFromAPI => {
                 const project = responseFromAPI.data;
-                console.log('project found', project);
                 //1. Option one
                 /* this.setState({
                     title: project.title,
