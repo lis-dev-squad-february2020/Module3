@@ -37,6 +37,7 @@ class App extends Component {
         .then(response => {
           if (response._id) {
             this.setCurrentUser(response);
+            localStorage.setItem("loggedin", true);
           } else {
             localStorage.clear();
           }
@@ -50,6 +51,7 @@ class App extends Component {
           <Navbar setCurrentUser={this.setCurrentUser} loggedInUser={this.state.loggedInUser} />
           <Switch>
             <Route path='/login' render={(props) => <Login setCurrentUser={this.setCurrentUser} {...props} /> } />
+            <Route path='/login-google' component={() => { window.location.href = 'http://localhost:5000/api/auth/google' }}/>
             <Route path='/signup' render={(props) => <Signup setCurrentUser={this.setCurrentUser} {...props} /> } />
             <Route exact path="/images/add" component={AddImage} />
             <Route exact path="/projects" component={ProjectList} />

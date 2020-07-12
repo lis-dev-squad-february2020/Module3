@@ -38,7 +38,7 @@ class ProjectDetails extends Component {
 
     deleteProject = () => {
         const { params } = this.props.match;
-        axios.delete(`http://localhost:5000/api/projects/${params.id}`)
+        axios.delete(`${process.env.REACT_APP_SERVER}/api/projects/${params.id}`)
             .then(() => {
                 //return <Redirect to='/projects' />
                 this.props.history.push('/projects');

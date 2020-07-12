@@ -16,7 +16,7 @@ class AddTask extends Component {
         event.preventDefault();
         const { title, description } = this.state;
         const project = this.props.projectId;
-        axios.post('http://localhost:5000/api/tasks', { title, description, project })
+        axios.post(`${process.env.REACT_APP_SERVER}/api/tasks`, { title, description, project })
           .then(() => {
             this.props.getProject();
             this.setState({title: '', description: ''});

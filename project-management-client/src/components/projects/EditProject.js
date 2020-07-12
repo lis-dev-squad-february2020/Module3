@@ -16,7 +16,7 @@ class EditProject extends Component {
         event.preventDefault();
         const { title, description } = this.state;
         const { params } = this.props.match;
-        axios.put(`http://localhost:5000/api/projects/${params.id}`, { title, description} )
+        axios.put(`${process.env.REACT_APP_SERVER}/api/projects/${params.id}`, { title, description} )
             .then(() => {
                 this.props.history.push('/projects');
             });

@@ -43,6 +43,9 @@ class Navbar extends Component {
                            <Link to='/login'>Login</Link>
                         </li>
                         <li>
+                           <Link to='/login-google'>Login using Google</Link>
+                        </li>
+                        <li>
                            <Link to='/signup'>Signup</Link>
                         </li>
                         <li>

@@ -21,6 +21,6 @@ router.post('/images/create', (req, res, next) => {
  
 router.post('/upload', uploadCloud.single("imageUrl"), (req, res, next) => {
     res.json({ imageUrl: req.file.secure_url });
-})
+});
 
 module.exports = router;
