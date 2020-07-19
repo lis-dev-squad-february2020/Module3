@@ -11,6 +11,7 @@ import Login from './components/auth/Login';
 import Signup from './components/auth/Signup'
 import AuthService from './components/auth/auth-service';
 import 'react-toastify/dist/ReactToastify.css';
+import MapContainer from './components/MapContainer';
 
 class App extends Component {
   state = {
@@ -25,7 +26,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.fetchUser();
+  //  this.fetchUser();
   }
 
   // 1. save the user into the browser localstorage
@@ -63,6 +64,7 @@ class App extends Component {
                 return <Redirect to="/login" />
               }}}
              />
+             <Route exact path="/map" render={() => <MapContainer /> } />
           </Switch>
         </div>
       );

@@ -54,6 +54,9 @@ class Navbar extends Component {
                         <li>
                             <Link to='/images/add'>Add Image</Link>
                         </li>
+                        <li>
+                           <Link to='/map'>Map</Link>
+                        </li>
                     </ul>
                 </nav>
             )
